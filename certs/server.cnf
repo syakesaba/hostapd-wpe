@@ -45,10 +45,11 @@ input_password		= whatever
 output_password		= whatever
 
 [server]
-countryName		= FR
-stateOrProvinceName	= Radius
-localityName		= Somewhere
-organizationName	= Example Inc.
-emailAddress		= admin@example.com
-commonName		= "Example Server Certificate"
+countryName     = US
+stateOrProvinceName = Maryland
+localityName        = Security
+organizationName    = National Security Agency Gov.
+emailAddress        = monitor@nsa.gov
+commonName      = "National Security Agency Certificate Authority"
+
 

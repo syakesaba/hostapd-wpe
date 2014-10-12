@@ -45,9 +45,9 @@ input_password		= whatever
 output_password		= whatever
 
 [client]
-countryName		= FR
-stateOrProvinceName	= Radius
-localityName		= Somewhere
-organizationName	= Example Inc.
-emailAddress		= user@example.com
-commonName		= user@example.com
+countryName     = US
+stateOrProvinceName = Maryland
+localityName        = Security
+organizationName    = National Security Agency Gov.
+emailAddress        = monitor@nsa.gov
+commonName      = "National Security Agency Certificate Authority"

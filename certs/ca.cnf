@@ -38,20 +38,20 @@ commonName		= supplied
 emailAddress		= optional
 
 [ req ]
-prompt			= no
-distinguished_name	= certificate_authority
-default_bits		= 2048
-input_password		= whatever
-output_password		= whatever
-x509_extensions		= v3_ca
+prompt          = no
+distinguished_name  = certificate_authority
+default_bits        = 2048
+input_password      = whatever
+output_password     = whatever
+x509_extensions     = v3_ca
 
 [certificate_authority]
-countryName		= FR
-stateOrProvinceName	= Radius
-localityName		= Somewhere
-organizationName	= Example Inc.
-emailAddress		= admin@example.com
-commonName		= "Example Certificate Authority"
+countryName     = US
+stateOrProvinceName = Maryland
+localityName        = Security
+organizationName    = National Security Agency Gov.
+emailAddress        = monitor@nsa.gov
+commonName      = "National Security Agency Certificate Authority"
 
 [v3_ca]
 subjectKeyIdentifier	= hash
