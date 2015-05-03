@@ -3,7 +3,10 @@ brad.antoniewicz@foundstone.com
 twitter: @brad_anton
 ------------------------------------------
 
-The current hostapd-wpe.patch is for: hostapd-2.2.tar.gz
+Syakesaba Versions
+----------
+* Adapted hostapd-2.4
+* Log all Connected Users
 
 About
 ----------
