@@ -4,20 +4,18 @@
 必要なもの：  
 - libssl-dev
 - libnl-dev
-  
-必要な操作：  
-$ cp defconfig .config  
 コンパイル：  
-make all  
+- make all
 出てくるもの：  
-hostapd-wpe hostapd-wpe-cli  
+- hostapd-wpe
+- hostapd-wpe-cli
 
 TLS証明書の作成
 ======
-make allを実行するだけ。  
+certs/でmake allを実行するだけ。  
 オレオレ証明書に書いてあるプロパティを  
 変えたいなら.cnfファイルをいじってください。  
-削除は証明書のディレクトリでmake destroycerts  
+削除はcerts/でmake destroycerts  
 
 使い方
 ======
@@ -28,8 +26,7 @@ hostapdと使い方は全く同じです。
 サンプルconfig
 =====
 サンプルはconfs/の中に入ってます。  
-証明書の場所とeap\_userの場所は自分で変えてください。  
+証明書関連ファイルの場所とeap\_userの場所は自分で変えてください。  
 confは基本的にESSIDとinterface名を変更するだけで良いはずです。  
 また、eap\_userも変える必要はないはずです。  
 PEAP・TTLS・TLSの指定がしたいときはユーザ"t"のところを変えましょう。  
-
