@@ -1,32 +1,47 @@
-コンパイル
+How to use
 ======
-まず、このリポジトリの中に置いてあるパッチ済みソースコードをコンパイルします。  
-必要なもの：  
-- libssl-dev
-- libnl-dev
-コンパイル：  
-- make all
-出てくるもの：  
-- hostapd-wpe
-- hostapd-wpe-cli
 
-TLS証明書の作成
+__Debian , Ubuntu__
+```sh
+apt-get install openssl
+apt-get install libssl-dev; #(>=1.0)
+apt-get install libnl-dev;
+git clone git@github.com:syakesaba/hostapd-wpe.git
+cd hostapd-wpe/patched_src/hostapd-2.4-wpe/hostapd/;
+make all;
+cp hostapd-wpe ../../../;
+cd ../../../;
+cd certs/;
+./bootstrap;
+cd ..;
+cp ./confs/hostapd-wpe.conf .;
+# change 'wlan1' to your NIC.
+./hostapd-wpe hostapd-wpe.conf;
+# enjoy!
+# tail -f ./hostapd-wpe.log
+```
+
+Enjoy Dummy SSL Certificate
 ======
-certs/でmake allを実行するだけ。  
-オレオレ証明書に書いてあるプロパティを  
-変えたいなら.cnfファイルをいじってください。  
-削除はcerts/でmake destroycerts  
+__Generate__
+1. Edit .cnf files in ./certs
+2. execute ./bootstrap in ./certs
+3. specify certificates created in hostapd's config file
+  
+__Delete__
+2. execute 'make destroycerts' in ./certs
 
-使い方
+Hostapd-wpe as RougeAP Spoofing 
 ======
-hostapdと使い方は全く同じです。  
-ひっかけさせたいAPと同じESSID・暗号化方式にするだけで  
-繋いできてくれるはずですし、confファイルをうまく作成しましょう。  
+The syntax of a hostapd-wpe's configuration file is same as usual hostapd's one.  
+Let hostapd-wpe to use same ESSIDs Authentications and Encryptions of AP to spoof.  
+Edit and create your hostapd-wpe.conf .
 
-サンプルconfig
+Notes
 =====
-サンプルはconfs/の中に入ってます。  
-証明書関連ファイルの場所とeap\_userの場所は自分で変えてください。  
-confは基本的にESSIDとinterface名を変更するだけで良いはずです。  
-また、eap\_userも変える必要はないはずです。  
-PEAP・TTLS・TLSの指定がしたいときはユーザ"t"のところを変えましょう。  
+- don't delete eap_user "t", it's special user to keep bypassing TLS phase 1 anytime. 
+- this wll offer ALL EAP Types to user "t" but if you don't want to restrict what EAP types to offer users.
+
+Videos
+=====
+[![Alt text for your video](http://img.youtube.com/vi/k-NtjV40zUM/0.jpg)](http://www.youtube.com/watch?v=k-NtjV40zUM)
