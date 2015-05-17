@@ -24,12 +24,14 @@ cp ./confs/hostapd-wpe.conf .;
 Enjoy Dummy SSL Certificate
 ======
 __Generate__
-1. Edit .cnf files in ./certs
-2. execute ./bootstrap in ./certs
-3. specify certificates created in hostapd's config file
+  
+1. Edit .cnf files in ./certs  
+2. execute ./bootstrap in ./certs  
+3. specify certificates created in hostapd's config file  
   
 __Delete__
-2. execute 'make destroycerts' in ./certs
+  
+1. execute 'make destroycerts' in ./certs
 
 Hostapd-wpe as RougeAP Spoofing 
 ======
