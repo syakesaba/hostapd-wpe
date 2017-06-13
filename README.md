@@ -3,19 +3,21 @@ How to use
 
 __Debian , Ubuntu__
 ```sh
-apt-get install openssl
-apt-get install libssl-dev; #(>=1.0)
-apt-get install libnl-dev;
-git clone git@github.com:syakesaba/hostapd-wpe.git
-cd hostapd-wpe/patched_src/hostapd-2.4-wpe/hostapd/;
+apt-get update;
+apt-get install -y openssl libssl-dev libnl-3-dev libnl-genl-3-dev build-essential git wget libnfnetlink-dev libsqlite3-dev;
+git clone https://github.com/syakesaba/hostapd-wpe.git;
+cd hostapd-wpe;
+wget https://w1.fi/releases/hostapd-2.6.tar.gz;
+tar xzvf hostapd-2.6.tar.gz;
+patch -p0 < hostapd-wpe-2.6-user.patch;
+cd hostapd-2.6/hostapd;
 make all;
-cp hostapd-wpe ../../../;
-cd ../../../;
-cd certs/;
+cp hostapd-wpe ../../;
+cd ../../certs;
 ./bootstrap;
 cd ..;
 cp ./confs/hostapd-wpe.conf .;
-# change 'wlan1' to your NIC.
+# assuming your wireless interface is 'wlan1'.
 ./hostapd-wpe hostapd-wpe.conf;
 # enjoy!
 # tail -f ./hostapd-wpe.log
