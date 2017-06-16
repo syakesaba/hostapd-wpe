@@ -4,6 +4,14 @@ Orig: <https://github.com/aircrack-ng/aircrack-ng/tree/master/patches/wpe>
 
 How to use
 ======
+__Docker__
+```sh
+git clone https://github.com/syakesaba/hostapd-wpe.git;
+cd hostapd-wpe;
+docker build . -t hostapd-wpe
+docker run -ti --rm --privileged --net=host hostapd-wpe
+```
+
 __Debian , Ubuntu__
 ```sh
 apt-get update;
